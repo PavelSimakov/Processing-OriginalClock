@@ -27,18 +27,18 @@ float x = lerp(25, 655, i / 12.0);
 text(hourScale[i], x, 250);
 }
 
-fill(#87FF00);
+fill(0);
 rect(30, 29, 646, 61);
 
-fill(#005FFF);
+fill(0);
 rect(30, 149, 646, 61);
 
-fill(#FF00EF);
+fill(0);
 rect(30, 269, 646, 61);
 
 for(int i = 35; i <= secLine; i++){
 stroke(255);
-strokeWeight(10);
+strokeWeight(10.1);
 strokeCap(SQUARE);
 line(i, 31, i, 89);
 }
@@ -68,14 +68,14 @@ void draw() {
   
  secLine = map(second(), 0, 59, 35, 670); 
 stroke(255);
-strokeWeight(10);
+strokeWeight(10.1);
 strokeCap(SQUARE);
 line(secLine, 31, secLine, 89);
 
 sec = second();
 if(sec == 59) {
   noStroke();
-fill(#87FF00);
+fill(0);
 rect(30, 29, 646, 61);
 }
 
@@ -88,7 +88,7 @@ line(minLine, 151, minLine, 209);
 min = minute();
 if(min == 59 & sec == 59) {
   noStroke();
-fill(#005FFF);
+fill(0);
 rect(30, 119, 646, 61);
 }
 if(hour >=0 & hour <=11) {
@@ -102,4 +102,8 @@ strokeWeight(10);
 strokeCap(SQUARE);
 line(hourWorking, 271, hourWorking, 329);
 //println( "секунды: " + sec + "; " + "минуты: " + min + "; " + "часы: " + hourWorking);
+if ((hour == 11 | hour == 23) & min == 59 & sec == 59) {
+fill(0);
+rect(30, 269, 646, 61);
+}
 }
