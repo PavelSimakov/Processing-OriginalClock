@@ -2,21 +2,18 @@ class ClocksHand {
   int cenX;
   int cenY;
   int timeSegment;
-  float timeIndex;
+  float timeIndex = radians(6);
   float radiusClocHand;
-  float radStart;
-  float radEnd;
+  float radStart = -3.0;
+  float radEnd = 3.0;
   int colorTime[] = new int[10];
   float timeWeight;
 
-  ClocksHand(int tempCX, int tempCY, int TempTimeSegment, float tempTimeIndex, float tempRadiusClockHand, float tempRadStart, float tempRadEnd, int tempColorTime[], float tempTimeWeight)  {
+  ClocksHand(int tempCX, int tempCY, int TempTimeSegment, float tempRadiusClockHand, int tempColorTime[], float tempTimeWeight)  {
     cenX = tempCX;
     cenY = tempCY;
     timeSegment = TempTimeSegment;
-    timeIndex = tempTimeIndex;
     radiusClocHand = tempRadiusClockHand;
-    radStart = tempRadStart;
-    radEnd = tempRadEnd;
     colorTime = tempColorTime;
     timeWeight = tempTimeWeight;
   }
